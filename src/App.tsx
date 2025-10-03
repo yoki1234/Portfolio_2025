@@ -1,9 +1,11 @@
+import {Header} from "./Containers/Header"
+
 function App() {
 
   return (
-    <div className='bg-yellow-300'>
-        Hello World
-    </div>
+    <>
+    <Header />
+    </>
   )
 }
 
