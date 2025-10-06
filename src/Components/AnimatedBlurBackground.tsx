@@ -64,7 +64,7 @@ const AnimatedBlurBackground: React.FC<Props> = ({
   opacity = 0.4,
   zIndex = -1,
   fillParent = false,
-  colors = ["#0ef247ff", "#0ef247ff", "#0ef247ff"],
+  colors = ["#000", "#000", "#000"],
   seed,
   getColor,
   getShape,
@@ -130,81 +130,81 @@ const AnimatedBlurBackground: React.FC<Props> = ({
   }, [count, seed, colors, getColor, getShape]);
 
   // Animate (starts on mount if autoStart)
-useEffect(() => {
-  if (!autoStart) return; // returns undefined, which is OK
+  useEffect(() => {
+    if (!autoStart) return; // returns undefined, which is OK
 
-  const canvas = canvasRef.current!;
-  const ctx = canvas.getContext("2d")!;
-  const reduced =
-    window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+    const canvas = canvasRef.current!;
+    const ctx = canvas.getContext("2d")!;
+    const reduced =
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
 
-  const drawPoly = (cx: number, cy: number, r: number, sides: number, rot: number) => {
-    ctx.beginPath();
-    for (let k = 0; k < sides; k++) {
-      const a = rot + (k * 2 * Math.PI) / sides;
-      const px = cx + r * Math.cos(a);
-      const py = cy + r * Math.sin(a);
-      k === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
-    }
-    ctx.closePath();
-    ctx.fill();
-  };
+    const drawPoly = (cx: number, cy: number, r: number, sides: number, rot: number) => {
+      ctx.beginPath();
+      for (let k = 0; k < sides; k++) {
+        const a = rot + (k * 2 * Math.PI) / sides;
+        const px = cx + r * Math.cos(a);
+        const py = cy + r * Math.sin(a);
+        k === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+      }
+      ctx.closePath();
+      ctx.fill();
+    };
 
-  const step = (ts: number) => {
-    const dt = lastTsRef.current ? (ts - lastTsRef.current) / 1000 : 0;
-    lastTsRef.current = ts;
+    const step = (ts: number) => {
+      const dt = lastTsRef.current ? (ts - lastTsRef.current) / 1000 : 0;
+      lastTsRef.current = ts;
 
-    const { width, height } = canvas.getBoundingClientRect();
-    ctx.clearRect(0, 0, width, height);
+      const { width, height } = canvas.getBoundingClientRect();
+      ctx.clearRect(0, 0, width, height);
 
-    // base vignette
-    const g = ctx.createRadialGradient(
-      width / 2, height / 2, Math.min(width, height) / 4,
-      width / 2, height / 2, Math.max(width, height) / 1.2
-    );
-    g.addColorStop(0, "rgba(0, 0, 0, 0.4)");
-    g.addColorStop(1, "rgba(0,0,0,0.25)");
-    ctx.fillStyle = g;
-    ctx.fillRect(0, 0, width, height);
+      // base vignette
+      const g = ctx.createRadialGradient(
+        width / 2, height / 2, Math.min(width, height) / 4,
+        width / 2, height / 2, Math.max(width, height) / 1.2
+      );
+      g.addColorStop(0, "rgba(0, 0, 0, 0.4)");
+      g.addColorStop(1, "rgba(0,0,0,0.25)");
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, width, height);
 
-    for (const s of shapesRef.current) {
-      if (!reduced) {
-        s.x += s.vx * dt;
-        s.y += s.vy * dt;
-        s.rotation += s.vr * dt;
+      for (const s of shapesRef.current) {
+        if (!reduced) {
+          s.x += s.vx * dt;
+          s.y += s.vy * dt;
+          s.rotation += s.vr * dt;
+        }
+
+        // gentle bounce
+        const m = s.size * 0.8;
+        if (s.x < -m || s.x > width + m) s.vx *= -1;
+        if (s.y < -m || s.y > height + m) s.vy *= -1;
+
+        ctx.globalAlpha = 0.9;
+        ctx.fillStyle = s.color;
+
+        if (s.sides === 0) {
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+          ctx.closePath();
+          ctx.fill();
+        } else {
+          drawPoly(s.x, s.y, s.size, s.sides, s.rotation);
+        }
       }
 
-      // gentle bounce
-      const m = s.size * 0.8;
-      if (s.x < -m || s.x > width + m) s.vx *= -1;
-      if (s.y < -m || s.y > height + m) s.vy *= -1;
-
-      ctx.globalAlpha = 0.9;
-      ctx.fillStyle = s.color;
-
-      if (s.sides === 0) {
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.fill();
-      } else {
-        drawPoly(s.x, s.y, s.size, s.sides, s.rotation);
-      }
-    }
+      rafRef.current = requestAnimationFrame(step);
+    };
 
     rafRef.current = requestAnimationFrame(step);
-  };
 
-  rafRef.current = requestAnimationFrame(step);
-
-  // ✅ cleanup returns void only
-  return () => {
-    if (rafRef.current !== null) {
-      cancelAnimationFrame(rafRef.current);
-      rafRef.current = null;
-    }
-  };
-}, [autoStart]);
+    // ✅ cleanup returns void only
+    return () => {
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+    };
+  }, [autoStart]);
 
 
   const style: React.CSSProperties = {
@@ -222,8 +222,8 @@ useEffect(() => {
 
   return (
 
-        <canvas ref={canvasRef} style={style} className="bg-gradient-t0-t" />
-);
+    <canvas ref={canvasRef} style={style} className="bg-gradient-t0-t" />
+  );
 };
 
 export default AnimatedBlurBackground;
