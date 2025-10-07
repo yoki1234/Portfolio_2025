@@ -8,7 +8,7 @@ type IconsProps = {
   FocusColor?: string;          
 };
 
-export function Icons({ selectedIcon, className, size = 24, title, FocusColor}: IconsProps) {
+export function Icons({ selectedIcon, className, size = 24, title}: IconsProps) {
   switch (selectedIcon) {
     case "Menu":
       return (
