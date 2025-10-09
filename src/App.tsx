@@ -5,8 +5,8 @@ function App() {
 
   return (
     <>
-    <Header />
-    <IntroductionSection/>
+      <Header />
+      <IntroductionSection />
     </>
   )
 }
