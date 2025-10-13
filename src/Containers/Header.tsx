@@ -1,4 +1,4 @@
-import AnimatedBlurBackground from "../Components/AnimatedBlurBackground"
+// import AnimatedBlurBackground from "../Components/AnimatedBlurBackground"
 import profilePhoto from "../assets/Profile_DP.png"
 import { Icons } from "../Components/Icons"
 import { ImageFramming } from "../Components/ImageFramming"
