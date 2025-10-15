@@ -1,7 +1,8 @@
+import { CarouselCards } from "./Components/CarouselCards"
 import {Header} from "./Containers/Header"
 import { IntroductionSection } from "./Containers/IntroductionSection"
 
-import { ButtonComponent } from "./Components/ButtonComponent"
+
 
 function App() {
 
@@ -9,8 +10,6 @@ function App() {
     <>
       <Header />
       <IntroductionSection />
-      <ButtonComponent buttonText={"hello"} handleClick={()=> alert("Button_clicked")}/>
-
     </>
   )
 }
