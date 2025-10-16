@@ -1,9 +1,6 @@
-type imageProps = {
-    imageSrc: string;
-    className?:string;
-};
+import type { PillProps } from "../DataTypes"
 
-export const Pills = ({ imageSrc, className }: imageProps) => {
+export const Pills = ({ imageSrc, className }: PillProps) => {
     return (
         <span
             className={

@@ -1,12 +1,5 @@
-type IconName = "Menu" | "LinkedIn" | "Instagram";
+import type { IconsProps } from "../DataTypes";
 
-type IconsProps = {
-  selectedIcon: IconName;
-  className?: string;       
-  size?: number;             
-  title?: string; 
-  FocusColor?: string;          
-};
 
 export function Icons({ selectedIcon, className, size = 24, title}: IconsProps) {
   switch (selectedIcon) {

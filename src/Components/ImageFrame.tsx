@@ -1,12 +1,6 @@
+import type { ImageFrameProps } from "../DataTypes"
 
-type structureName = "profile_photo" | "not_profile_photo"
-
-type ImageFrammingProps = {
-    imageURL: string;
-    structureSelection: structureName;
-}
-
-export const ImageFramming = ({ imageURL, structureSelection }: ImageFrammingProps) => {
+export const ImageFrame = ({ imageURL, structureSelection }: ImageFrameProps) => {
     return(
     <>{
         structureSelection === "profile_photo" ?
