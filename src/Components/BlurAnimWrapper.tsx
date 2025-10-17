@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
+// not exporting types from this file, it is for more understaing.
+ 
 type BlurAnimWrapperProps = {
   /** The only parameter: palette for the animated blobs */
   colors: string[];

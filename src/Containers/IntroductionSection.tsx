@@ -1,19 +1,22 @@
 import { Pills } from "../Components/Pills";
 import introImageOne from "../assets/introImage_1.png";
-// import AnimatedBlurBackground from "../Components/AnimatedBlurBackground";
-// import BlurAnimWrapper from "../Components/BlurAnimWrapper";
+import type { introductionParagraphProps } from "../DataTypes";
 
-export const IntroductionSection = () => {
-    return (
 
-        <section>
+export const IntroductionSection = ({ content, pillImage}: introductionParagraphProps) => {
+    const introPara = content.map((sentence) => {
+        return (
             <p className="w-full text-base leading-7 ">
-                Hey there, I’m <span className="font-semibold text-slate-900">Akshay Ashok</span> 👋{" "}
-                I love <Pills imageSrc={introImageOne} />
-                exploring data and turning it into meaningful stories. With a background in
-                software development and a master&apos;s in Data Analytics, I combine
-                technical skill with visual creativity.
+                {sentence.sentenceOne} <span className="font-semibold text-slate-900">{sentence.sentenceTwo}</span> {sentence.sentenceThree}{" "}
+                {sentence.sentenceFour} <Pills imageSrc={pillImage} />
+                {sentence.sentenceFive}
             </p>
+        );
+    });
+
+    return (
+        <section>
+            {introPara}
         </section>
 
     );

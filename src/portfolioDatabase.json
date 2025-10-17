@@ -1,0 +1,22 @@
+{
+    "portfolioDataset": {
+        "isMoblieScreen": "True",
+        "isTabScreen": "True",
+        "isDesktopScreen": "True",
+        "mobileData": {
+            "ProfileImage": "/assets/Profile_DP.png",
+            "Introduction": {
+                "textContent": [
+                    {
+                        "sentenceOne": "Hey there, I'm",
+                        "sentenceTwo": "Akshay Ashok",
+                        "sentenceThree": "👋",
+                        "sentenceFour": "I love",
+                        "sentenceFive": "exploring data and turning it into meaningful stories. With a background in software development and a master's in Data Analytics, I combine technical skill with visual creativity."
+                    }
+                ],
+                "pillImage": "../Components/Pills"
+            }
+        }
+    }
+}

@@ -1,16 +1,9 @@
-import { CarouselCards } from "./Components/CarouselCards"
-import {Header} from "./Containers/Header"
-import { IntroductionSection } from "./Containers/IntroductionSection"
-
-
+import Home from "./Pages/Home"
 
 function App() {
 
   return (
-    <>
-      <Header />
-      <IntroductionSection />
-    </>
+    <Home/>
   )
 }
 

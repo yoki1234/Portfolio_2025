@@ -1,12 +1,5 @@
 import { ButtonComponent } from "./ButtonComponent"
-
-
-type CarouselCardsProps = {
-    title: String,
-    description:String,
-    imageURL: String,
-}
-
+import type { CarouselCardsProps } from "../DataTypes"
 
 export const CarouselCards = ({title, description, imageURL}: CarouselCardsProps) => {
     return(
