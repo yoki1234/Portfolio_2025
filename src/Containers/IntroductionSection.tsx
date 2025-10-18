@@ -1,5 +1,4 @@
 import { Pills } from "../Components/Pills";
-import introImageOne from "../assets/introImage_1.png";
 import type { introductionParagraphProps } from "../DataTypes";
 
 

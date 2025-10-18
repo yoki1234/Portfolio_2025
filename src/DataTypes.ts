@@ -5,9 +5,11 @@ type ButtonComponentProps = {
 
 
 type CarouselCardsProps = {
-    title: String,
-    description:String,
-    imageURL: String,
+    title: string,
+    description:string,
+    imageURL: string,
+    btnLabel: string,
+    isCarouselCard: boolean,
 }
 
 type IconName = "Menu" | "LinkedIn" | "Instagram";
