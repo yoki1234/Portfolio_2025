@@ -1,6 +1,6 @@
 # Personal Portfolio
 ## 🚀 Overview
-This is my personal portfolio website, built as a **full-stack project** using **TypeScript**. It showcases my skills, experience, and selected projects in a modern and visually engaging way.
+This is my personal portfolio website, built as a **full-stack project** using **TypeScript**. It showcases my skills, experience, and selected projects in a modern and visually engaging way
 
 ## 🎯 Purpose & Importance
 - **Self-branding:** A single place to present who I am and what I build as a developer and data analyst.
