@@ -18,8 +18,8 @@ export const Header = ({ imageURL }: Headerprop) => {
                 </div>
                 <ImageFrame imageURL={imageURL} structureSelection="profile_photo" />
                 <div className="w-full flex flex-row justify-end">
-                    <Icons selectedIcon="Instagram" className="w-6 h-6 mr-3 cursor-pointer" />
-                    <Icons selectedIcon="LinkedIn" className="w-6 h-6 cursor-pointer" />
+                    <Icons selectedIcon="Instagram" className="w-6 h-6 mr-3 cursor-pointer" isBackgroundDark={false}/>
+                    <Icons selectedIcon="LinkedIn" className="w-6 h-6 cursor-pointer" isBackgroundDark={false}/>
                 </div>
             </div>
         </BlurAnimWrapper >

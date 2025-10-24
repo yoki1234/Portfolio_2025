@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
+import type { HamburgerMenuProps } from "../DataTypes";
 
-type HamburgerMenuProps = {
-  isOpen: boolean;
-  handleClick: () => void;
-};
 
 export const HamburgerMenu = ({ isOpen, handleClick }: HamburgerMenuProps) => {
   return (

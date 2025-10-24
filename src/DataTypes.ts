@@ -19,7 +19,8 @@ type IconsProps = {
   className?: string;       
   size?: number;             
   title?: string; 
-  FocusColor?: string;          
+  FocusColor?: string;
+  isBackgroundDark: boolean;          
 };
 
 
@@ -48,6 +49,15 @@ type introductionParagraphProps = {
     pillImage: string,
 };
 
+type HamburgerMenuProps = {
+  isOpen: boolean;
+  handleClick: () => void;
+};
+
+type FooterProps = {
+    footerContents: string[],
+}
+
 
 export type {
     PillProps,
@@ -56,5 +66,7 @@ export type {
     CarouselCardsProps,
     IconsProps,
     introductionParagraphProps,
+    HamburgerMenuProps,
+    FooterProps,
 }
 
