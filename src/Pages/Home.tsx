@@ -3,6 +3,7 @@ import { Header } from "../Containers/Header"
 import { IntroductionSection } from "../Containers/IntroductionSection"
 import { ImageSelection } from "../Components/ImageSelection"
 import { Cards } from "../Components/Cards"
+import { HamburgerMenu } from "../Components/HamburgerMenu"
 
 
 const mobileData = data.portfolioDataset.mobileData

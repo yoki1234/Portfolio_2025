@@ -3,29 +3,6 @@ import type { IconsProps } from "../DataTypes";
 
 export function Icons({ selectedIcon, className, size = 24, title}: IconsProps) {
   switch (selectedIcon) {
-    case "Menu":
-      return (
-        <svg
-          width={size}
-          height={(size * 12) / 18}
-          viewBox="0 0 18 12"
-          className={className}
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden={!title}
-          role="img"
-        >
-          {title ? <title>{title}</title> : null}
-          <path
-            className="hover:slate-400"
-            d="M1.5 6H16.5M1.5 1H16.5M1.5 11H16.5"
-            stroke="#1E1E1E"
-            strokeWidth={1.6}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      );
-
     case "LinkedIn":
       return (
         <svg
