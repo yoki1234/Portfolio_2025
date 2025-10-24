@@ -4,6 +4,7 @@ import { IntroductionSection } from "../Containers/IntroductionSection"
 import { ImageSelection } from "../Components/ImageSelection"
 import { Cards } from "../Components/Cards"
 import { HamburgerMenu } from "../Components/HamburgerMenu"
+import { Footer } from "../Containers/Footer"
 
 
 const mobileData = data.portfolioDataset.mobileData
@@ -19,6 +20,7 @@ function Home() {
         description={mobileData.Card.cardContent.cardinfo}
         btnLabel={mobileData.Card.cardContent.btnLabel}
         isCarouselCard={mobileData.Card.isNotCarouselCard} />
+      <Footer footerContents={mobileData.Footer.FooterContent}/>
     </>
   )
 }

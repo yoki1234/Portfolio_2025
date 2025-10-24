@@ -17,21 +17,29 @@
                 ],
                 "pillImage": "../Components/Pills"
             },
-            "Card":{
+            "Card": {
                 "isCarouselCard": true,
                 "isNotCarouselCard": false,
-                "carouselCardContent":{
+                "carouselCardContent": {
                     "cardTitle": "Welcome to the World of Kazhchafied",
                     "cardinfo": "A personal blog where Akshay Ashok transforms everyday scenes into timeless visual stories, exploring moments, memories, and meaning through the lens of creativity",
                     "btnLabel": "Open",
-                    "image":"imageURl"
+                    "image": "imageURl"
                 },
-                "cardContent":{
+                "cardContent": {
                     "cardTitle": "Welcome to the World of Kazhchafied",
                     "cardinfo": "A personal blog where Akshay Ashok transforms everyday scenes into timeless visual stories, exploring moments, memories, and meaning through the lens of creativity",
                     "btnLabel": "Open",
-                    "image":"imageURl"
+                    "image": "imageURl"
                 }
+            },
+            "Footer": {
+                "FooterContent": [ 
+                    "My Blog: Kazhchafied",
+                    "Career & Experience",
+                    "Contacts",
+                    "About"
+                ]
             }
         }
     }
